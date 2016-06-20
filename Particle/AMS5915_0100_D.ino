@@ -10,7 +10,7 @@
 // AMS5915_0100_D I2C address is 0x28(40)
 #define Addr 0x28
 
-float pressure = 0.0, cTemp = 0.0, fTemp = 0.0;
+double pressure = 0.0, cTemp = 0.0, fTemp = 0.0;
 int temp = 0;
 
 void setup()
@@ -54,10 +54,10 @@ void loop()
 
   // Output data to dashboard
   Particle.publish("Pressure in mbar: ", String(pressure));
-  delay(100);
+  delay(1000);
   Particle.publish("Temperature in Celsius :", String(cTemp));
-  delay(100);
+  delay(1000);
   Particle.publish("Temperature in Fahrenheit : ", String(fTemp));
-  delay(500);
+  delay(1000);
   
 }
