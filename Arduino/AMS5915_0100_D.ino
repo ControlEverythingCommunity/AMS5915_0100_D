@@ -38,7 +38,7 @@ void loop()
   // Convert the data
   float pressure = ((data[0] & 0x3F) * 256.0 + data[1]);
   float temp = ((data[2] & 0xFF) * 256.0 + (data[3] & 0xE0)) / 32;
-  pressure = ((pressure - 1638.0) / ((13107.0) / 10.0));
+  pressure = ((pressure - 1638.0) / ((13107.0) / 100.0));
   float cTemp = ((temp * 200.0) / 2048) - 50.0;
   float fTemp = (cTemp * 1.8 ) + 32;
 
